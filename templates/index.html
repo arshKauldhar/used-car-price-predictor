@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Used Car Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Used Car Price Predictor</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="form-card">
+            <h2>Used Car Price Predictor</h2>
+
+            <!-- FORM GOES HERE (unchanged as per your request) -->
+            <form action="/predict" method="post">
+                <!-- Form remains unchanged -->
+                <label for="Brand">Select Car Brand:</label>
+                <select name="Brand" required>
+                    <option value="">--Choose a Brand--</option>
+                    <option value="Maruti">Maruti</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Mahindra">Mahindra</option>
+                    <option value="Mercedes-Benz">Mercedes-Benz</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Audi">Audi</option>
+                    <option value="Tata">Tata</option>
+                    <option value="Skoda">Skoda</option>
+                    <option value="Renault">Renault</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Land">Land</option>
+                    <option value="Mini">Mini</option>
+                    <option value="Fiat">Fiat</option>
+                    <option value="Mitsubishi">Mitsubishi</option>
+                    <option value="Jaguar">Jaguar</option>
+                    <option value="Jeep">Jeep</option>
+                    <option value="Volvo">Volvo</option>
+                    <option value="Datsun">Datsun</option>
+                    <option value="Force">Force</option>
+                    <option value="Isuzu">Isuzu</option>
+                    <option value="Ambassador">Ambassador</option>
+                </select>
+
+                <label for="Location">Select Car Location:</label>
+                <select name="Location" required>
+                    <option value="">--Choose a Location--</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Kochi">Kochi</option>
+                    <option value="Coimbatore">Coimbatore</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Jaipur">Jaipur</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="Fuel_Type">Fuel Type</label>
+                <select name="Fuel_Type" required>
+                    <option value="">-- Select Fuel Type --</option>
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                </select>
+
+                <label for="Kilometers_Driven">Kilometers Driven</label>
+                <input type="number" name="Kilometers_Driven" required>
+
+                <label for="Transmission">Transmission</label>
+                <select name="Transmission" required>
+                    <option value="">-- Select Transmission --</option>
+                    <option value="1">Manual</option>
+                    <option value="0">Automatic</option>
+                </select>
+
+                <label for="Owner_Type">Owner Type</label>
+                <select name="Owner_Type" required>
+                    <option value="">-- Select Owner Type --</option>
+                    <option value="1">First</option>
+                    <option value="2">Second</option>
+                    <option value="3">Third</option>
+                    <option value="4">Fourth & Above</option>
+                </select>
+
+                <label for="Mileage(kmpl)">Mileage (kmpl)(5.0 - 35.0)</label>
+                <input type="number" step="0.1" name="Mileage(kmpl)" required>
+
+                <label for="Engine(cc)">Engine (cc)(600 - 6000)</label>
+                <input type="number" step="0.1" name="Engine(cc)" required>
+
+                <label for="Power(bhp)">Power (bhp)(30.0 - 600.0)</label>
+                <input type="number" step="0.1" name="Power(bhp)" required>
+
+                <label for="Seats">Seats</label>
+                <input type="number" name="Seats" required>
+
+                <label for="Age">Age of Car (Years)</label>
+                <input type="number" name="Age" required>
+
+                <!-- Submit Button -->
+                <button type="submit" class="full-width">Predict Price</button>
+
+                <!-- Prediction Output -->
+                {% if prediction_text %}
+                    <p class="result">{{ prediction_text }}</p>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
