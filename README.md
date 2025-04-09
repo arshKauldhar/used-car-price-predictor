@@ -16,5 +16,5 @@ Users interact with a user-friendly web form to input car details and instantly 
 - **Notebook**: Contains data preprocessing, feature engineering, model training, and evaluation
 
 ## 🔗 Live Demo
-[Click here to visit the live project]([https://your-site.onrender.com](https://used-car-price-predictor-cjy6.onrender.com))
+[Click here to visit the live project](https://used-car-price-predictor-cjy6.onrender.com)
 
