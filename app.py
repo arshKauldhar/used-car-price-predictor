@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template
 import numpy as np
 import pickle
+import os
 
 app = Flask(__name__)
 model = pickle.load(open('best_model.pkl', 'rb'))
@@ -67,5 +68,6 @@ def predict():
     return render_template('index.html', prediction_text=f"Estimated Car Price: ₹ {output} lakhs")
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))  # Use Render's PORT if available
+    app.run(host="0.0.0.0", port=port)
