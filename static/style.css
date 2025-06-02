@@ -9,13 +9,13 @@ body, html {
 
 /* Navbar */
 .navbar {
-  position: fixed;
   background-color: #002d62;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
   color: #fff;
+  z-index: 1000;
 }
 
 .logo {
