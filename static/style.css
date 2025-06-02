@@ -20,6 +20,8 @@ body, html {
   padding: 15px 40px;
   color: #fff;
   z-index: 1000;             /* Keeps it above other elements */
+  overflow: hidden;         /* Prevents content from spilling */
+  white-space: nowrap;
 }
 
 .logo {
