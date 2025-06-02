@@ -9,6 +9,7 @@ body, html {
 
 /* Navbar */
 .navbar {
+  position: fixed;
   background-color: #002d62;
   display: flex;
   justify-content: space-between;
